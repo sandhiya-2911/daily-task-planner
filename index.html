@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Task Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">MAKE TODAY COUNT</p>
+        <h1>Daily Task Planner</h1>
+        <p class="subtitle">A little progress every day adds up.</p>
+      </div>
+      <div class="date-card">
+        <span id="dayName">Today</span>
+        <strong id="todayDate"></strong>
+      </div>
+    </header>
+
+    <section class="summary" aria-label="Task summary">
+      <div class="summary-card"><span>Total tasks</span><strong id="totalCount">0</strong></div>
+      <div class="summary-card"><span>Pending</span><strong id="pendingCount">0</strong></div>
+      <div class="summary-card"><span>Completed</span><strong id="completedCount">0</strong></div>
+    </section>
+
+    <section class="panel">
+      <h2>Add a task</h2>
+      <form id="taskForm">
+        <label class="field task-field">
+          <span>Task name</span>
+          <input id="taskInput" type="text" placeholder="e.g. Finish assignment" maxlength="120" required>
+        </label>
+        <div class="form-row">
+          <label class="field">
+            <span>Due date</span>
+            <input id="dueDate" type="date">
+          </label>
+          <label class="field">
+            <span>Priority</span>
+            <select id="priority">
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+          <button class="add-button" type="submit">+ Add task</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="tasks-section">
+      <div class="tasks-heading">
+        <div>
+          <h2>Your tasks</h2>
+          <p class="muted">Keep track of what matters.</p>
+        </div>
+        <label class="filter-label">
+          <span class="visually-hidden">Filter tasks</span>
+          <select id="filterSelect">
+            <option value="All">All tasks</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </label>
+      </div>
+      <div id="taskList" class="task-list"></div>
+      <p id="emptyMessage" class="empty-message">No tasks here yet. Add your first task above!</p>
+    </section>
+
+    <footer>Daily Task Planner <span>•</span> Plan it. Do it. Done.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
